@@ -104,6 +104,8 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 	
 	function getTableName($param)
 	{
+		global $nuked;
+		
 		switch($param)
 		{
 			case "post":$table_name=$nuked[prefix]."_alerteposte_pref";break;
@@ -295,6 +297,131 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		. "<input type=\"hidden\" name=\"type_pref\" value=\"$param\"/>"
 		. "<div style=\"text-align: center;\"><br /><input type=\"submit\" value=\"" . _SEND . "\" /></div>\n"
 		. "<div style=\"text-align: center;\"><br />[ <a href=\"index.php?file=Admin\"><b>" . _BACK . "</b></a> ]</div></form><br /></div>\n";
+	}
+	
+	function send_pref()
+    {
+        global $user;
+
+		$user_for = $_REQUEST["user_for"];
+		$niveau = $_REQUEST["niveau"];
+		$subject = $_REQUEST["subject"];
+		$subject = mysql_real_escape_string(stripslashes($subject));
+		$corps = $_REQUEST["corps"];
+		$corps = secu_html(html_entity_decode($corps));
+		$corps = mysql_real_escape_string(stripslashes($corps));
+		$senduser = $_REQUEST["senduser"];
+		$sendtitre = $_REQUEST["sendtitre"];
+		$sendurl = $_REQUEST["sendurl"];
+		$type_pref = $_REQUEST["type_pref"];
+		
+		$table_name = getTableName($type_pref);
+
+		if(trim($subject)=="" || trim($corps)==""){
+			 echo "<div class=\"notification error png_bg\">\n"
+			. "<div>\n"
+			. _EMPTYFIELD
+			. "</div>\n"
+			. "</div>\n";
+			redirect("index.php?file=AlertePost&page=admin&op=".$type_pref, 2);
+			adminfoot();
+			exit();
+		}else {		
+			$nbselect=count($user_for);
+			if ($niveau == 10 && $nbselect == 0)
+			{
+				 echo "<div class=\"notification error png_bg\">\n"
+				. "<div>\n"
+				. _EMPTYFIELD
+				. "</div>\n"
+				. "</div>\n";
+				redirect("index.php?file=AlertePost&page=admin&op=".$type_pref, 2);
+				adminfoot();
+				exit();
+			} else
+			{
+				$liste_users = "";
+				if ($niveau==10)
+				{
+					for($i=0;$i<$nbselect;$i++)
+					{
+						$liste_users = $user_for[$i]."|".$liste_users;
+					}
+				}
+				
+				if($liste_users != ""){
+					$liste_users = substr($liste_users, 0, strlen($liste_users)-1);
+				}
+				
+				$sql2="UPDATE ".$table_name ." SET value = '$liste_users' WHERE name='userFor'";
+				$res=mysql_query($sql2);
+				
+				$sql3="UPDATE ".$table_name ." SET value = '$niveau' WHERE name='niveauSel'";
+				$res=mysql_query($sql3);
+				
+				$sql4="UPDATE ".$table_name ." SET value = '$subject' WHERE name='sujet'";
+				$res=mysql_query($sql4);
+				
+				$sql5="UPDATE ".$table_name ." SET value = '$corps' WHERE name='message'";
+				$res=mysql_query($sql5);
+				
+				$sql6="UPDATE ".$table_name ." SET value = '$senduser' WHERE name='sendUser'";
+				$res=mysql_query($sql6);
+				
+				$sql7="UPDATE ".$table_name ." SET value = '$sendtitre' WHERE name='sendTitre'";
+				$res=mysql_query($sql7);
+				
+				$sql8="UPDATE ".$table_name ." SET value = '$sendurl' WHERE name='sendUrl'";
+				$res=mysql_query($sql8);
+				
+				echo "<div class=\"notification success png_bg\">\n"
+				. "<div>\n"
+				. "" . _PREFSEND . "\n"
+				. "</div>\n"
+				. "</div>\n";
+				echo "<script>\n"
+				."setTimeout('screen()','3000');\n"
+				."function screen() { \n"
+				."screenon('index.php?file=AlertePost&page=admin&op=".$type_pref."', 'index.php?file=AlertePost&page=admin&op=".$type_pref."');\n"
+				."}\n"
+				."</script>\n";
+			}
+		}
+    }
+	
+	function send_pref_main()
+	{
+		global $user, $nuked;
+		
+		$alerteActive = $_POST["alerteActive"];
+		$alertePostActive = $_POST["alertePostActive"];
+		$alerteReplyActive = $_POST["alerteReplyActive"];
+		$alerteEditActive = $_POST["alerteEditActive"];
+		$table_pref = $nuked['prefix'] . "_alerteposte_pref";
+		
+		$sql1="UPDATE ".$table_pref ." SET value = '$alerteActive' WHERE name='alerteActive'";
+		$res=mysql_query($sql1);
+		
+		$sql2="UPDATE ".$table_pref ." SET value = '$alertePostActive' WHERE name='alertePostActive'";
+		$res=mysql_query($sql2);
+		
+		$sql3="UPDATE ".$table_pref ." SET value = '$alerteReplyActive' WHERE name='alerteReplyActive'";
+		$res=mysql_query($sql3);
+		
+		$sql4="UPDATE ".$table_pref ." SET value = '$alerteEditActive' WHERE name='alerteEditActive'";
+		$res=mysql_query($sql4);
+		
+		echo "<div class=\"notification success png_bg\">\n"
+		. "<div>\n"
+		. "" . _PREFSEND . "\n"
+		. "</div>\n"
+		. "</div>\n";
+		echo "<script>\n"
+		."setTimeout('screen()','3000');\n"
+		."function screen() { \n"
+		."screenon('index.php?file=AlertePost&page=admin', 'index.php?file=AlertePost&page=admin');\n"
+		."}\n"
+		."</script>\n";
 	}
 	
 	switch($_REQUEST['op'])
