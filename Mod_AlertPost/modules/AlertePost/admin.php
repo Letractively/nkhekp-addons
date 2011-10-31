@@ -267,7 +267,7 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		. "  </tr>\n"
 		. "  <tr>\n"
 		. "    <td align=\"left\"><div id=\"perso\" style=\"display:none;position:relative;\">"
-		. "      <table>\n<tr>\n<td><b>"._PERSONALISE."</b> : <br />"._AIDE."</td><td align=\"left\"><select name=\"user_for[]\" size=\"8\" multiple=\"multiple\">\n";
+		. "      <table>\n<tr>\n<td style=\"vertical-align: middle;width: 17%;\"><b>"._PERSONALISE."</b> : <br />"._AIDE."</td><td align=\"left\"><select name=\"user_for[]\" size=\"8\" multiple=\"multiple\">\n";
 		if($niveau_sel == 10){
 			echo "<script>showorhide(10, 'perso');</script>";
 			select_user(true);
