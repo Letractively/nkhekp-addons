@@ -1,0 +1,61 @@
+<?
+if (!defined("INDEX_CHECK"))
+{
+	exit('You can\'t run this file alone.');
+}
+define("_ADMINALERTEPOST", "Administration Alerte Post");
+define("_GLOBALPREF","Global Preferences");
+define("_NEWPOSTPREF","Add post preferences");
+define("_REPLYPOSTPREF","Reply post preferences");
+define("_EDITPOSTPREF","Edit post preferences");
+define("_ACTIVATEALERT","Send Emails for all operations");
+define("_ACTIVATEALERTPOST","Send Email when a new message is posted");
+define("_ACTIVATEALERTREPLY","Send Email when adding a reply to a post");
+define("_ACTIVATEALERTEDIT","Send Email when a message is edited");
+define("_POSTMESS","Send Message");
+define("_AUTHOR","Author");
+define("_USERFOR","For");
+define("_SUBJECT","Subject");
+define("_USERMESS","Message");
+define("_SEND","Send");
+define("_BACK","Back");
+define("_EMPTYFIELD","You forgot a mandatory field");
+define("_UNKNOWMEMBER","Sorry, this member is unknown.");
+define("_MESSSEND","Message was successfully sent.");
+define("_PRIVATEMESS","Private Message");
+define("_OF","From");
+define("_THE","on");
+define("_WROTE","write");
+define("_REPLY","Reply");
+define("_DEL","Remove");
+define("_NOSELECTMESS","No message was selected");
+define("_MESSDEL","Message was successfully removed.");
+define("_DELETEMESS","You are about to remove the message of");
+define("_CONFIRM","Continue?");
+define("_DELETEMESSAGES","You are about to remove the messages");
+define("_MESSAGESDEL","Messages were successfully removed.");
+define("_BY","by");
+define("_CLEARSUCCES","was successfully removed.");
+define("_DELCONFIRM","Confirm");
+define("_CANCEL","Cancel");
+define("_DELBOX","Del");
+define("_FROM","From");
+define("_DATE","Date");
+define("_SEEDETAILUSER","View the Author's details");
+define("_READMESS","Read message");
+define("_STATUS","Status");
+define("_READ","Read");
+define("_NOTREAD","Not Read");
+define("_CHECKALL","Check All");
+define("_UNCHECKALL","Uncheck All");
+define("_NOMESSPV","you have no message...");
+define("_SENDNEWMESS","New message");
+define("_MASSMP","Mass Private Message");
+define("_ALLMEMBERS","All Members");
+define("_SITEMEMBERS","Website members (Level 1)");
+define("_TEAMMEMBERS","Team members (Who have a team in her profil)");
+define("_NIVOMEMBERS","Members (Level ");
+define("_ADMINMEMBERS","Administrators (Level 9)");
+define("_PERSONALISE","Personnalised");
+define("_AIDE","Stay on ''CTRL'' key on your keyboard and click on user you want send pm.");
+?>

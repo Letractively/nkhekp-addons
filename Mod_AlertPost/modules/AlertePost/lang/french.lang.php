@@ -12,10 +12,6 @@ define("_ACTIVATEALERT","Activer l'envoi de mail pour tous les types d'opération
 define("_ACTIVATEALERTPOST","Activer l'envoi de mail lors d'un nouveau post");
 define("_ACTIVATEALERTREPLY","Activer l'envoi de mail lors d'une réponse à un post");
 define("_ACTIVATEALERTEDIT","Activer l'envoi de mail lors de l'édition d'un post");
-define("_ALERTEPOSTGEN","Préférences générales");
-define("_ALERTEPOST","Préférences pour l'envoi de mail lors d'un nouveau post");
-define("_ALERTEPOSTREPLY","Préférences pour l'envoi de mail lors d'une réponse à un post");
-define("_ALERTEPOSTEDIT","Préférences pour l'envoi de mail lors de l'édition d'un post");
 define("_USERFOR","Pour");
 define("_PREFSEND","Préférences sauvegardées.");
 define("_SUBJECT","Sujet");
