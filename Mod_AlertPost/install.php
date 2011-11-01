@@ -56,7 +56,6 @@ function index()
    <p style="padding-top:15px;">
      - 1 dossier " <font color="#0099CC">modules</font> " (contenant : 2 dossiers)<br />
      - 1 fichier " <font color="#0099CC">readme.txt</font> "<br />
-     - 1 fichier " <font color="#0099CC">licence.txt</font> "<br />
      - 1 fichier " <font color="#0099CC">install.php</font> "<br />
    </p>
    <h2>Installation du module :</h2>
