@@ -25,7 +25,7 @@ function head()
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installation du module AlertePost v1.0.0 NK 1.7.9</title>
+    <title>Installation du module AlertePost v2.0.0 NK 1.7.9</title>
     <style  type="text/css">
 	  body { font-family:Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #999;background:#FFF;margin:0 auto;padding:0;text-align:center;}
       h1 { margin:15px 0 0;padding:0;font-size:14px;font-weight:normal;text-align:center;padding-bottom: 10px;border-bottom:1px dashed #0099CC }
@@ -35,6 +35,7 @@ function head()
       a:link, a:visited, a:active { font-family:Verdana, Arial, Helvetica, sans-serif;font-size: 10px;color: #666;text-decoration:none; }
       a:hover{ font-family:Verdana, Arial, Helvetica, sans-serif;font-size: 10px;text-decoration:underline; }
 	  p { margin:0;padding:0 0 10px 0; text-align:left; border-bottom: 1px dashed #0099CC; }
+	  p.buttons { border: none;text-align:center;}
 	  div.head { width:500px; margin:20px auto; border:1px dashed #0099CC; padding: 15px; }
 	  .attention { color:red; font-style:italic; font-size:10px;margin-top: 5px; }
 	  p.description { border: none;margin-top: 20px;}
@@ -50,7 +51,7 @@ function index()
 ?>
    <div class="head">
    <a href="http://www.nkhelp.fr"><img src="http://www.nkhelp.fr/images/pages/banners/banniere_468.png" alt="" title="Site communautaire d'entraide consacré à la création et modification de modules, patchs, blocks et divers pour le CMS Nuked-KlaN" /></a>
-   <h1>Vous allez installer le module AlertePost v1.0.0 de <a href="mailto:tassin@gmail.com?subject=Module Alerte Post v1.0.0 NK 1.7.9&body=Bonjour," target="_blank" title="Tassin" style="font-size:14px; color:#0099CC;">Tassin</a><div class="attention">Module compatible avec la version nk 1.7.9 uniquement *</div></h1>
+   <h1>Vous allez installer le module AlertePost v2.0.0 de <a href="mailto:tassin@gmail.com?subject=Module Alerte Post v2.0.0 NK 1.7.9&body=Bonjour," target="_blank" title="Tassin" style="font-size:14px; color:#0099CC;">Tassin</a><div class="attention">Module compatible avec la version nk 1.7.9 uniquement *</div></h1>
    <h2>Ce module contient :</h2>
    <p style="padding-top:15px;">
      - 1 dossier " <font color="#0099CC">modules</font> " (contenant : 2 dossiers)<br />
@@ -70,7 +71,7 @@ function index()
    </p>
    <br/>
    <form action="install.php?op=send" method="post">
-   <p style="text-align:center;">
+   <p class="buttons">
      <input type="submit" name="conf" value="Poursuivre l'installation" />&nbsp;&nbsp;<input type="submit" name="nul" value="Annuler" />
    </p>
    </form>
@@ -191,7 +192,7 @@ function send()
 	@unlink("install.php");
     ?>
     <div class="head">
-    <h1 class="confirm">Installation annulée. Redirection vers l'index...</h1>
+    <h1 class="confirm">Installation annulée.<br /><br />Redirection vers l'index...</h1>
 	</div>
 	<?php
     redirect("index.php", 3);
