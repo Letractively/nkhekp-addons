@@ -1,17 +1,20 @@
-<?
+<?php
 if (!defined("INDEX_CHECK"))
 {
 	exit('You can\'t run this file alone.');
 }
-define("_ADMINALERTEPOST", "Administration Alerte Post");
+define("_ADMINALERTEPOST", "Alert Post Administration");
 define("_GLOBALPREF","Global Preferences");
 define("_NEWPOSTPREF","Add post preferences");
 define("_REPLYPOSTPREF","Reply post preferences");
 define("_EDITPOSTPREF","Edit post preferences");
-define("_ACTIVATEALERT","Send Emails for all operations");
+define("_ACTIVATEALERT","Send Email for all operations");
 define("_ACTIVATEALERTPOST","Send Email when a new message is posted");
 define("_ACTIVATEALERTREPLY","Send Email when adding a reply to a post");
 define("_ACTIVATEALERTEDIT","Send Email when a message is edited");
+define("_SENDUSER","Include Poster's Nickname in email");
+define("_SENDTITRE","Include new post title in email");
+define("_SENDURL", "Include post url in email");
 define("_POSTMESS","Send Message");
 define("_AUTHOR","Author");
 define("_USERFOR","For");
@@ -57,5 +60,5 @@ define("_TEAMMEMBERS","Team members (Who have a team in her profil)");
 define("_NIVOMEMBERS","Members (Level ");
 define("_ADMINMEMBERS","Administrators (Level 9)");
 define("_PERSONALISE","Personnalised");
-define("_AIDE","Stay on ''CTRL'' key on your keyboard and click on user you want send pm.");
+define("_AIDE","Stay on ''CTRL'' key on your keyboard and click on user you want send email.");
 ?>

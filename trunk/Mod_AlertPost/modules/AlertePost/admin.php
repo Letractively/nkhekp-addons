@@ -15,10 +15,9 @@ if (!defined("INDEX_CHECK"))
 global $user, $language;
 translate("modules/AlertePost/lang/" . $language . ".lang.php");
 include("modules/Admin/design.php");
+admintop();
 
 echo "<script  type=\"text/javascript\" src=\"modules/AlertePost/js/functions.js\"></script>";
-
-admintop();
 
 if (!$user)
 {
@@ -35,6 +34,8 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 	
 	function menu($param)
 	{
+		global $language;
+		
 		switch($param) {
 			case "main":
 				 echo "<div class=\"content-box\">\n" //<!-- Start Content Box -->
@@ -157,10 +158,10 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		
 		echo "<form method=\"post\" action=\"index.php?file=AlertePost&amp;page=admin&amp;op=send_pref_main\">\n"
 	  	. "<table style=\"margin-left: auto;margin-right: auto;text-align: left;\" border=\"0\" cellspacing=\"0\" cellpadding=\"2\">\n"
-		. "<tr><td><b>" . _ACTIVATEALERT . " :</b> <input id=\"alerteActive\" class=\"checkbox\" type=\"checkbox\" name=\"alerteActive\" value=\"on\" " . $checked_alerte_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
-		. "<tr><td><b>" . _ACTIVATEALERTPOST . " :</b> <input id=\"alertePostActive\" class=\"checkbox\" type=\"checkbox\" name=\"alertePostActive\" value=\"on\" " . $checked_alerte_post_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
-		. "<tr><td><b>" . _ACTIVATEALERTREPLY . " :</b> <input id=\"alerteReplyActive\" class=\"checkbox\" type=\"checkbox\" name=\"alerteReplyActive\" value=\"on\" " . $checked_alerte_reply_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
-		. "<tr><td><b>" . _ACTIVATEALERTEDIT . " :</b> <input id=\"alerteEditActive\" class=\"checkbox\" type=\"checkbox\" name=\"alerteEditActive\" value=\"on\" " . $checked_alerte_edit_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
+		. "<tr><td><label for=\"alerteActive\" style=\"display: inline;\"><b>" . _ACTIVATEALERT . " :</b></label> <input id=\"alerteActive\" class=\"checkbox\" type=\"checkbox\" name=\"alerteActive\" value=\"on\" " . $checked_alerte_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
+		. "<tr><td><label for=\"alertePostActive\" style=\"display: inline;\"><b>" . _ACTIVATEALERTPOST . " :</b></label> <input id=\"alertePostActive\" class=\"checkbox\" type=\"checkbox\" name=\"alertePostActive\" value=\"on\" " . $checked_alerte_post_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
+		. "<tr><td><label for=\"alerteReplyActive\" style=\"display: inline;\"><b>" . _ACTIVATEALERTREPLY . " :</b></label> <input id=\"alerteReplyActive\" class=\"checkbox\" type=\"checkbox\" name=\"alerteReplyActive\" value=\"on\" " . $checked_alerte_reply_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
+		. "<tr><td><label for=\"alerteEditActive\" style=\"display: inline;\"><b>" . _ACTIVATEALERTEDIT . " :</b></label> <input id=\"alerteEditActive\" class=\"checkbox\" type=\"checkbox\" name=\"alerteEditActive\" value=\"on\" " . $checked_alerte_edit_active . " onclick=\"gestionCases(this);\"/></td></tr>\n"
 		. "</table>\n"
 		. "<div style=\"text-align: center;\"><br /><input type=\"submit\" value=\"" . _SEND . "\" /></div>\n"
 		. "<div style=\"text-align: center;\"><br />[ <a href=\"index.php?file=Admin\"><b>" . _BACK . "</b></a> ]</div></form><br /></div>\n";
@@ -252,7 +253,7 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		. "</script>\n</td>\n"
 		. "  </tr>\n"
 		. "  <tr>\n"
-		. "    <td align=\"left\"><b>"._USERFOR."</b> : <select id=\"niveau\" name=\"niveau\" onchange=\"javascript:showorhide(this.value, 'perso');\">\n"
+		. "    <td align=\"left\"><label for=\"niveau\" style=\"display: inline;\"><b>"._USERFOR."</b></label> : <select id=\"niveau\" name=\"niveau\" onchange=\"javascript:showorhide(this.value, 'perso');\">\n"
 		. "      <option value=\"0\" ".$selected_niv_0.">"._ALLMEMBERS."</option>\n"
 		. "      <option value=\"1\" ".$selected_niv_1.">"._SITEMEMBERS."</option>\n"
 		. "      <option value=\"11\" ".$selected_niv_11.">"._TEAMMEMBERS."</option>\n"
@@ -269,7 +270,7 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		. "  </tr>\n"
 		. "  <tr>\n"
 		. "    <td align=\"left\"><div id=\"perso\" style=\"display:none;position:relative;\">"
-		. "      <table>\n<tr>\n<td style=\"vertical-align: middle;width: 17%;\"><b>"._PERSONALISE."</b> : <br />"._AIDE."</td><td align=\"left\"><select name=\"user_for[]\" size=\"8\" multiple=\"multiple\">\n";
+		. "      <table>\n<tr>\n<td style=\"vertical-align: middle;width: 17%;\"><label for=\"user_for\" style=\"display: inline;\"><b>"._PERSONALISE."</b></label> : <br />"._AIDE."</td><td align=\"left\"><select id=\"user_for\" name=\"user_for[]\" size=\"8\" multiple=\"multiple\">\n";
 		if($niveau_sel == 10){
 			echo "<script>showorhide(10, 'perso');</script>";
 			select_user(true);
@@ -279,19 +280,19 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		echo "</select>\n</td>\n</tr>\n</table></div></td>\n"
 		. "  </tr>\n"
 		. "  <tr>\n"
-		. "    <td height=\"30\" align=\"left\"><b>"._SUBJECT."</b> : <input type=\"text\" name=\"subject\" maxlength=\"100\" size=\"55\" value=\"$sujet\"/></td>\n"
+		. "    <td height=\"30\" align=\"left\"><label for=\"subject\" style=\"display: inline;\"><b>"._SUBJECT."</b></label> : <input type=\"text\" id=\"subject\" name=\"subject\" maxlength=\"100\" size=\"55\" value=\"$sujet\"/></td>\n"
 		. "  </tr>\n"
 		. "  <tr>\n"
-		. "    <td align=\"left\"><b>"._USERMESS." :</b><br /><br /><textarea id=\"mess_pv\" name=\"corps\" cols=\"65\" rows=\"15\">$message</textarea></td>\n"
+		. "    <td align=\"left\"><label for=\"mess_pv\" style=\"display: inline;\"><b>"._USERMESS." :</b></label><br /><br /><textarea id=\"mess_pv\" name=\"corps\" cols=\"65\" rows=\"15\">$message</textarea></td>\n"
 		. "  </tr>\n"
 		. "  <tr>\n"
-		. "    <td align=\"left\"><b>"._SENDUSER." : </b><input id=\"senduser\" class=\"checkbox\" type=\"checkbox\" name=\"senduser\" value=\"on\" " . $checked_send_user . "/></td>\n"
+		. "    <td align=\"left\"><label for=\"senduser\" style=\"display: inline;\"><b>"._SENDUSER." : </b></label> <input id=\"senduser\" class=\"checkbox\" type=\"checkbox\" name=\"senduser\" value=\"on\" " . $checked_send_user . "/></td>\n"
 		. "  </tr>\n"
 		. "  <tr>\n"
-		. "    <td align=\"left\"><b>"._SENDTITRE." : </b><input id=\"sendtitre\" class=\"checkbox\" type=\"checkbox\" name=\"sendtitre\" value=\"on\" " . $checked_send_titre . "/></td>\n"
+		. "    <td align=\"left\"><label for=\"sendtitre\" style=\"display: inline;\"><b>"._SENDTITRE." : </b></label> <input id=\"sendtitre\" class=\"checkbox\" type=\"checkbox\" name=\"sendtitre\" value=\"on\" " . $checked_send_titre . "/></td>\n"
 		. "  </tr>\n"
 		. "  <tr>\n"
-		. "    <td align=\"left\"><b>"._SENDURL." : </b><input id=\"sendtitre\" class=\"checkbox\" type=\"checkbox\" name=\"sendurl\" value=\"on\" " . $checked_send_url . "/></td>\n"
+		. "    <td align=\"left\"><label for=\"sendurl\" style=\"display: inline;\"><b>"._SENDURL." : </b></label> <input id=\"sendurl\" class=\"checkbox\" type=\"checkbox\" name=\"sendurl\" value=\"on\" " . $checked_send_url . "/></td>\n"
 		. "  </tr>\n"
 		. "</table>\n"
 		. "<input type=\"hidden\" name=\"type_pref\" value=\"$param\"/>"
