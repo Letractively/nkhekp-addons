@@ -1,4 +1,4 @@
-#labels Phase-Requirements
+#labels Phase-Requirements,Featured
 _Roadmap des différents modules, patchs développés_
 
 = Introduction =
