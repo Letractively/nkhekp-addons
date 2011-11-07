@@ -10,6 +10,6 @@ Vous trouverez ci-dessous la liste des projets qui sont en cours et/ou réalisé
 
 || *Projet* || *Type Projet* || *Version Projet* || *Version NK* || *Statut* || *Lien DL* ||
 || Alerte Post || Module || 1.1.0 || 1.7.7 & SP 4.4 || Terminé || [http://code.google.com/p/nkhekp-addons/downloads/detail?name=Module_AlertPost_v1.1.0_177_sp44.rar&can=2&q= <-- Téléchargement -->] ||
-|| Alerte Post || Module || 2.0.0 || 1.7.9 || En Cours (90%) || Aucun ||
+|| Alerte Post || Module || 2.0.0 || 1.7.9 || En Cours (90%) || [http://nkhekp-addons.googlecode.com/files/Module_AlertPost_v2.0.0_179.rar <-- Téléchargement -->] ||
 || Vidéos || Module || 1.0.0 || 1.7.7 & SP 4.4 || Terminé || Aucun ||
 || Vidéos || Module || 2.0.0 || 1.7.9 || Non commencé || Aucun ||
