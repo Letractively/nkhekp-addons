@@ -51,7 +51,7 @@ function index()
 ?>
    <div class="head">
    <a href="http://www.nkhelp.fr"><img src="http://www.nkhelp.fr/images/pages/banners/banniere_468.png" alt="" title="Site communautaire d'entraide consacré à la création et modification de modules, patchs, blocks et divers pour le CMS Nuked-KlaN" /></a>
-   <h1>Vous allez installer le module AlertePost v2.0.0 de <a href="mailto:tassin@gmail.com?subject=Module Alerte Post v2.0.0 NK 1.7.9&body=Bonjour," target="_blank" title="Tassin" style="font-size:14px; color:#0099CC;">Tassin</a><div class="attention">Module compatible avec la version nk 1.7.9 uniquement *</div></h1>
+   <h1>Vous allez installer le module AlertePost v2.0.0 de <a href="mailto:cvrdtassin@gmail.com?subject=Module Alerte Post v2.0.0 NK 1.7.9&body=Bonjour," target="_blank" title="Tassin" style="font-size:14px; color:#0099CC;">Tassin</a><div class="attention">Module compatible avec la version nk 1.7.9 uniquement *</div></h1>
    <h2>Ce module contient :</h2>
    <p style="padding-top:15px;">
      - 1 dossier " <font color="#0099CC">modules</font> " (contenant : 2 dossiers)<br />

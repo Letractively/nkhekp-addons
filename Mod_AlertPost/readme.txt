@@ -10,7 +10,7 @@ Installation Français
 - Uploader le contenu du repertoire Module_AlertPost_v2.0.0_179 sur votre FTP.
 - Lancer l'installation du module en tapant l'adresse suivante : http://votre_adresse/install.php
 
-AIDE: tassin@gmail.com -- http://code.google.com/p/nkhekp-addons/issues/entry
+AIDE: cvrdtassin@gmail.com -- http://code.google.com/p/nkhekp-addons/issues/entry
 
 Installation English
 ********************
@@ -18,4 +18,4 @@ Installation English
 - upload the contents of the directory Module_AlertPost_v2.0.0_179 on your FTP
 - Launch installation on this url : http://your_adress/install.php
 
-HELP: tassin@gmail.com -- http://code.google.com/p/nkhekp-addons/issues/entry
+HELP: cvrdtassin@gmail.com -- http://code.google.com/p/nkhekp-addons/issues/entry
