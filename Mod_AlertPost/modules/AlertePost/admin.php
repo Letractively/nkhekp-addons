@@ -39,7 +39,7 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		switch($param) {
 			case "main":
 				 echo "<div class=\"content-box\">\n" //<!-- Start Content Box -->
-				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . "</h3>\n"
+				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . copyright() . "</h3>\n"
 				. "<div style=\"text-align:right;\"><a href=\"help/" . $language . "/AlertePost.php\" rel=\"modal\">\n"
 				. "<img style=\"border: 0;\" src=\"help/help.gif\" alt=\"\" title=\"" . _HELP . "\" /></a>\n"
 				. "</div></div>\n"
@@ -50,7 +50,7 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 				break;
 			case "post":
 				echo "<div class=\"content-box\">\n" //<!-- Start Content Box -->
-				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . "</h3>\n"
+				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . copyright() . "</h3>\n"
 				. "<div style=\"text-align:right;\"><a href=\"help/" . $language . "/AlertePost.php\" rel=\"modal\">\n"
 				. "<img style=\"border: 0;\" src=\"help/help.gif\" alt=\"\" title=\"" . _HELP . "\" /></a>\n"
 				. "</div></div>\n"
@@ -62,7 +62,7 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 				break;
 			case "reply":
 				echo "<div class=\"content-box\">\n" //<!-- Start Content Box -->
-				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . "</h3>\n"
+				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . copyright() . "</h3>\n"
 				. "<div style=\"text-align:right;\"><a href=\"help/" . $language . "/AlertePost.php\" rel=\"modal\">\n"
 				. "<img style=\"border: 0;\" src=\"help/help.gif\" alt=\"\" title=\"" . _HELP . "\" /></a>\n"
 				. "</div></div>\n"
@@ -74,7 +74,7 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 				break;
 			case "edit":
 				echo "<div class=\"content-box\">\n" //<!-- Start Content Box -->
-				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . "</h3>\n"
+				. "<div class=\"content-box-header\"><h3>" . _ADMINALERTEPOST . copyright() . "</h3>\n"
 				. "<div style=\"text-align:right;\"><a href=\"help/" . $language . "/AlertePost.php\" rel=\"modal\">\n"
 				. "<img style=\"border: 0;\" src=\"help/help.gif\" alt=\"\" title=\"" . _HELP . "\" /></a>\n"
 				. "</div></div>\n"
@@ -423,6 +423,10 @@ if ($visiteur >= $level_admin && $level_admin > -1)
 		."screenon('index.php?file=AlertePost&page=admin', 'index.php?file=AlertePost&page=admin');\n"
 		."}\n"
 		."</script>\n";
+	}
+	
+	function copyright() {
+		return "&nbsp;&nbsp;--&nbsp;&nbsp;&copy; " . _COPYRIGHT . "&nbsp;<a href=\"mailto:cvrdtassin@gmail.com\">Tassin</a>";
 	}
 	
 	switch($_REQUEST['op'])
