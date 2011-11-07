@@ -59,4 +59,5 @@ define("_NIVOMEMBERS","Membres (Niveau ");
 define("_ADMINMEMBERS","Administrateurs (Niveau 9)");
 define("_PERSONALISE","Personnalisé");
 define("_AIDE","Maintener la touche ''CTRL'' sur votre clavier et cliquer sur les pseudo à qui vous vouler envoyer un mail.");
+define("_COPYRIGHT", "Module cr&eacute;&eacute; par");
 ?>

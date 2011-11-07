@@ -61,4 +61,5 @@ define("_NIVOMEMBERS","Members (Level ");
 define("_ADMINMEMBERS","Administrators (Level 9)");
 define("_PERSONALISE","Personnalised");
 define("_AIDE","Stay on ''CTRL'' key on your keyboard and click on user you want send email.");
+define("_COPYRIGHT", "Module created by");
 ?>
